@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+fieldset{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#game{
+    display: none;
+}
+
+#header{
+    display: flex;
+    justify-content: center;
+}
+
+#namePlayer{
+    width: 25%;
+    margin: auto;
+}
+
+#infoPlayer1{
+    margin-bottom: 100px;
+}
+
+#imgj1, #imgj2{
+    width: 15px;
+    height: 15px;
+}
+
+#board{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#carte{
+    border: black 9px solid;
+    border-radius: 19px;
+    box-shadow: 10px 10px 8px #888;
+}
+
+#combat{
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, tr, td{
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+#carte table{
+    background-image: url('img/fond.png');
+    border: black 2px solid;
+}
+
+tr{
+    height: 50px;
+}
+
+td{
+    width: 50px;
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Jeu de plateau</title>
+        <script src="jquery-3.3.1.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+
+        <div id="header">
+                <h1>Jeu de plateau</h1>
+        </div>
+
+        <fieldset>
+            <legend>Informations sur les joueurs</legend>
+            <label for="player1">Pseudo Joueur 1</label>
+            <input type="text" id="player1" name="player1">
+            <br>
+            <label for="player2">Pseudo Joueur 2</label>
+            <input type="text" id="player2" name="player2">
+            <br>
+            <button type="submit" id="submit">Valider</button>
+        </fieldset>
+
+        <div id="game"> <!-- Est invisible tant que les informations sur les joueurs ne sont pas rentrées -->
+            <div id="board">
+                <div id="namePlayer">
+                    <div id="infoPlayer1">
+                        <p>
+                            <span>
+                                <img id="imgj1" src="img/j1.png">
+                            </span>
+                            Joueur 1 : <span id="player1Name"></span>
+                        </p>
+                        <p>Vie : <span id="player1Life"></span></p>
+                        <p>Arme : <span id="player1Weapon"></span></p>
+                    </div>
+                    <div id="infoPlayer2">
+                        <p>
+                            <span>
+                                <img id="imgj2" src="img/j2.jpg">
+                            </span>
+                            Joueur 2 : <span id="player2Name"></span></p>
+                        <p>Vie : <span id="player2Life"></span></p>
+                        <p>Arme : <span id="player2Weapon"></span></p>
+                    </div>
+                </div>
+                <div id="carte">
+                    <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr><tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </table>
+                </div>
+                <div id="combat"> <!-- Affiche les textes du combat -->
+                </div>
+            </div>
+        </div>
+
+       <script>
+           var combat = false;
+           var firstPlayer, secondPlayer; // Permet de classer les joueurs pour les choix de stratégie
+           $('#submit').click(function(){
+               $('fieldset').css('display', 'none');
+               
+               if($('#player1').val() != '') player1.nick = $('#player1').val();
+               if($('#player2').val() != '') player2.nick = $('#player2').val();
+                
+               $('#player1Name').text(player1.nick);
+               $('#player2Name').text(player2.nick);
+               
+               $('#game').css('display', 'contents');
+            });
+        </script>
+    <script src="object.js"></script>
+    <script src="map.js"></script>
+    <script src="players_apparition.js"></script>
+    <script src="weapons_apparition.js"></script>
+    <script src="movements.js"></script>
+    <script src="fight.js"></script>
+    <script>
+        $('#player1Life').text(player1.life.toString());
+        $('#player1Weapon').text(player1.weapon.name);
+        $('#player2Life').text(player2.life.toString());
+        $('#player2Weapon').text(player2.weapon.name);
+    </script>
+    </body>
+</html>
